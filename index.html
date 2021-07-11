@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>EMI calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"/>
+   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+  
+	<section class="section">
+        <div class="container">
+            <div class="content">
+                <h1>EMI calculator</h1>
+                <p>
+                   The values shown here are calculated by system operations and not involved in any Tampering.
+
+                </p>
+            </div>
+
+            <div class="columns">
+                <div class="column is-three-quarters">
+                    <div class="card">
+                        <div class="card-content">
+                            <form id="loan-form">
+                                <div class="level">
+                                    <!--Left side-->
+                                    <div class="level-left is-marginless">
+                                        <div class="level-item">
+                                        <p class="number">1</p>
+                                        Loan Amount(₹)  
+                                         </div>
+                                    </div>
+
+                                    <!--Right side-->
+                                    <div class="level-right">
+                                        <div class="level-item">
+                                            <div class="field">
+                                                <div class="control has-icons-left">
+                                                    <input type="range" min="0" max="2000000" value="0" step="10000" class="slider" id="amount">   <!--  <input type="number"  id="amount" class="input" /> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="level">
+                                    <!--Left side-->
+                                    <div class="level-left is-marginless">
+                                        <div class="level-item">
+                                        <p class="number">2</p>
+                                        Intrest Rate
+                                         </div>
+                                         <span class="icon is-small is-left">
+                                            <i class="fa fa-percentage"></i>
+
+                                        </span>
+                                    </div>
+
+                                    <!--Right side-->
+                                    <div class="level-right">
+                                        <div class="level-item">
+                                            <div class="field">
+                                                <div class="control has-icons-right">
+                                                    <input type="range" min="0" max="20" value="0" step="0.1" class="slider" id="interest">       <!-- <input type="number" id="interest" class="input" /> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="level">
+                                    <!--Left Side-->
+                                    <div class="level-left is-marginless">
+                                        <div class="level-item">
+                                        <p class="number">3</p>
+                                            Number of Years
+                                         </div>
+                                         <span class="icon is-small is-left">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+
+                                    <!--Right Side-->
+                                    <div class="level-right">
+                                        <div class="level-item">
+                                            <div class="field">
+                                                <div class="control has-icons-left">
+                                                    <input type="range" min="1" max="30" value="0" class="slider" id="year">      <!--     <input type="number" id="years" class="input" /> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Showmof input values-->
+                                <div class="columns is-multiline">
+  
+                                    <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+                                      <div class="notification is-primary has-text">
+                                        <p class="title">Amount: <span id="demo1"></span></p>
+                                      </div>
+                                    </div>
+                            
+                                    <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+                                      <div class="notification is-info has-text">
+                                        <p class="title">Interest Rate: <span id="demo2"></span></p>
+                                      </div>
+                                    </div>
+                            
+                                    <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+                                      <div class="notification is-link has-text">
+                                        <p class="title">Years: <span id="demo3"></span></p>
+                                      </div>
+                                    </div>
+                            
+                                  </div>
+                                
+                                <div class="control">
+                                    <button 
+                                     class="button is-large is-fullwidth is-primary is-outlined">Calculate</button>
+                                     </div>                          
+                                                   
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--RESULTS-->
+    <section class="section"> 
+        <h1 class="title ">Calculated Results</h1>
+  <div class="columns is-multiline">
+    
+    <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+      <div class="notification is-success has-text">
+        <p id="monthlyPayment" class="title is-1">₹</p>
+        <p class="subtitle is-4">Monthly Payments</p>
+      </div>
+    </div>
+  
+      <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+          <div class="notification is-warning has-text">
+            <p id="totalInterest" class="title is-1">%</p>
+            <p class="subtitle is-4">Total Interest</p>
+          </div>
+        </div>
+  
+        <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+          <div class="notification is-link has-text">
+            <p id="totalPayment" class="title is-1">₹</p>
+            <p class="subtitle is-4">Total Amount</p>
+          </div>
+        </div>
+
+        <button class="button is-large is-fullwidth is-primary is-outlined" onclick="Clear()" id="clear">Clear</button>
+  
+  </div>
+  </section>
+</body>
+
+<script src="Emi2.js"></script>
+</html>
